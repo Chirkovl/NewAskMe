@@ -1,4 +1,6 @@
-<p>Question: <%= question.body %></p>
-<p>User_id: <%= question.user_id %></p>
-<p><%= link_to 'Edit', edit_question_path(question) %></p>
-<p><%= button_to 'Delete', question_path(question), method: :delete %></p>
+<p class="title-md"><%= question.body %></p>
+<p class="title-sm">User_id: <%= question.user_id %></p>
+<div>
+  <%= link_to 'Edit', edit_question_path(question), class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--colored' %>
+  <%= button_to 'Delete', question_path(question), method: :delete, class: 'mdl-button mdl-js-button mdl-button--raised mdl-button--colored' %>
+</div>

@@ -1,4 +1,8 @@
-<h1>Question <%= @question.id%></h1>
+<div class="container">
+  <h3>Question <%= @question.id%></h3>
+</div>
 
-<%= render 'question', question: @question%>
-<p><%= link_to 'Back', root_path %></p>
+<div class="container">
+  <%= render 'question', question: @question%>
+</div>
+

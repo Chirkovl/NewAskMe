@@ -1,7 +1,11 @@
-<h1>All questions</h1>
+<div class="container">
+  <h2 class="mr-lg">All questions</h2>
 
-<%= render 'form', question: @question%>
+  <%= render 'form', question: @question%>
+</div>
 
 <% @questions.each do |question| %>
-  <%= render question %>
+  <div class="mb-sm container">
+    <%= render question %>
+  </div>
 <% end %>
