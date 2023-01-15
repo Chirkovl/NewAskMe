@@ -1,6 +1,7 @@
 <h1>All questions</h1>
+
+<%= render 'form', question: @question%>
+
 <% @questions.each do |question| %>
-  <p>Question: <%= question.body %></p>
-  <p>User_id: <%= question.user_id %></p>
-  <p><%= link_to 'See question', question_path(question) %></p>
+  <%= render question %>
 <% end %>
