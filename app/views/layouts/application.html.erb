@@ -20,8 +20,15 @@
             <div class="mdl-layout-spacer"></div>
             <!-- Navigation -->
             <nav class="mdl-navigation">
-              <a class="mdl-navigation__link" href="">Link</a>
-              <div><%= link_to 'Sign Up', new_user_path, class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent' %></div>
+              <div>
+                <% if current_user.present? %>
+                  <span class='mr-sm title-sm' ><%= "@#{current_user.nickname}" %></span>
+                  <%= button_to 'Sign Out', session_path, method: :delete, class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent' %>
+                <% else %>
+                  <%= link_to 'Sign In', new_session_path, class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent' %>
+                  <%= link_to 'Sign Up', new_user_path, class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent' %>
+                <% end %>
+              </div>
             </nav>
           </div>
         </header>

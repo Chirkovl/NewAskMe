@@ -1,0 +1,14 @@
+<div class="container">
+  <h2 class="title">Sign in</h2>
+
+  <p class="mt">Type your email and password!</p>
+
+  <div class="mt">
+    <%= form_with scope: :session, url: session_path, data: {turbo: false} do |form| %>
+      <p><%= form.label :email%></p>
+      <p><%= form.text_field :email, class: "form-text-field" %></p>
+
+      <p class="mt-lg"><%= form.submit "Sign in", class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %></p>
+    <% end %>
+  </div>
+</div>
