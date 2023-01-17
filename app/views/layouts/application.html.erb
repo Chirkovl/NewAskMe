@@ -21,9 +21,7 @@
             <!-- Navigation -->
             <nav class="mdl-navigation">
               <a class="mdl-navigation__link" href="">Link</a>
-              <a class="mdl-navigation__link" href="">Link</a>
-              <a class="mdl-navigation__link" href="">Link</a>
-              <a class="mdl-navigation__link" href="">Link</a>
+              <div><%= link_to 'Sign Up', new_user_path, class: 'mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent' %></div>
             </nav>
           </div>
         </header>
@@ -39,6 +37,13 @@
         <main class="mdl-layout__content">
           <div class="page-content"><!-- Your content goes here --></div>
         </main>
+    </div>
+    <div class="container-invisible">
+      <% if flash[:notice].present? %>
+        <p class="mb mt message message-notice"><%= flash[:notice]%></p>
+      <% elsif flash[:alert].present? %>
+        <p class="mb mt message message-alert"><%= flash[:alert]%></p>
+      <% end %> 
     </div>
     <div class="wrapper">
       <%= yield %>

@@ -1,0 +1,9 @@
+<%= form_with model: user do |form| %>
+  <p class="title-md"><%= form.label :name, 'Write your name!' %></p>
+  <p><%= form.text_field :name, class: "form-text-field" %></p>
+  <p class="title-md"><%= form.label :nickname, 'Write your nickname!'%></p>
+  <p><%= form.text_field :nickname, class: "form-text-field" %></p>
+  <p class="title-md"><%= form.label :email, 'Write your email!'%></p>
+  <p><%= form.text_field :email, class: "form-text-field" %></p>
+  <p><%= form.submit 'Save', class: "mdl-button mdl-js-button mdl-button--raised mdl-button--colored" %></p>
+<% end %>

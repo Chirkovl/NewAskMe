@@ -15,7 +15,7 @@ body {
 
 
 .wrapper {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 40px;
   width: 100%;
 }
@@ -23,4 +23,10 @@ body {
 .container {
   background: #fff;
   padding: 20px;
+}
+
+.container-invisible {
+  max-width: 1200px;
+  margin: 40px;
+  width: 100%;
 }
