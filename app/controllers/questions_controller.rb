@@ -5,9 +5,15 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    @question = Question.create(question_params)
+    @question = Question.new(question_params)
 
-    redirect_to question_path(@question)
+    if @question.save
+      redirect_to question_path(@question), notice: "New question created!"
+    else
+      flash.now[:alert] = 'You filled in the text fields incorrectly!'
+
+      render :new
+    end
   end
 
   def edit
@@ -15,9 +21,14 @@ class QuestionsController < ApplicationController
   end
 
   def update
-    @question.update(question_params)
 
-    redirect_to question_path(@question)
+    if @question.update(question_params)
+      redirect_to question_path(@question), notice: "Question updated!"
+    else
+      flash.now[:alert] = 'You filled in the text fields incorrectly!'
+
+      render :edit
+    end
   end
 
   def index
@@ -31,7 +42,7 @@ class QuestionsController < ApplicationController
   def destroy
     @question.destroy
 
-    redirect_to root_path
+    redirect_to root_path, notice: "Question deleted!"
   end
 
   private
